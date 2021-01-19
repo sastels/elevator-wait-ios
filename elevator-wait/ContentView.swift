@@ -14,24 +14,21 @@ struct ContentView: View {
   
   var body: some View {
     VStack {
+      Text("Timer: \(timerName)")
       Spacer()
-      if stopWatchManager.mode != .stopped {
+      
         let minutes = stopWatchManager.secondsElapsed / 60
         let seconds = stopWatchManager.secondsElapsed % 60
         Text("Elapsed: \(String(format: "%02d:%02d", minutes, seconds))")
-        
-      } else {
-        Text("Timer: \(timerName)")
-          .padding()
-      }
-      Spacer()
       
+      Spacer()
       switch stopWatchManager.mode {
         case .stopped:
           Button(action: { stopWatchManager.start() }) {
             Text("Start")
               .fontWeight(.bold)
               .font(.title2)
+              .frame(width:100)
               .padding()
               .background(Color.purple)
               .cornerRadius(40)
@@ -42,6 +39,7 @@ struct ContentView: View {
             Text("Pause")
               .fontWeight(.bold)
               .font(.title2)
+              .frame(width:100)
               .padding()
               .background(Color.purple)
               .cornerRadius(40)
@@ -49,12 +47,12 @@ struct ContentView: View {
           }
         case .paused:
           VStack {
-            Spacer()
             HStack {
               Button(action: { stopWatchManager.start() }) {
                 Text("Continue")
                   .fontWeight(.bold)
                   .font(.title2)
+                  .frame(width:100)
                   .padding()
                   .background(Color.purple)
                   .cornerRadius(40)
@@ -65,23 +63,25 @@ struct ContentView: View {
                 Text("Submit")
                   .fontWeight(.bold)
                   .font(.title2)
+                  .frame(width:100)
                   .padding()
                   .background(Color.purple)
                   .cornerRadius(40)
                   .foregroundColor(.white)
+                  
               }
             }
-            Spacer()
+            
             Button(action: { stopWatchManager.stop() }) {
               Text("Reset")
                 .fontWeight(.bold)
                 .font(.title2)
+                .frame(width:100)
                 .padding()
                 .background(Color.red)
                 .cornerRadius(40)
                 .foregroundColor(.white)
-            }
-            Spacer()
+            }.padding()
           }
       }
       
