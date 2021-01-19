@@ -11,7 +11,7 @@ import SwiftUI
 struct elevator_waitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TimerView()
         }
     }
 }

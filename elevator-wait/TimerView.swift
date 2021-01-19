@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TimerView.swift
 //  elevator-wait
 //
 //  Created by Stephen Astels on 2021-01-19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
   
   var timerName = "test"
@@ -92,9 +92,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    let c1 = ContentView()
-    let c2 = ContentView()
-    let c3 = ContentView()
+    let c1 = TimerView()
+    let c2 = TimerView()
+    let c3 = TimerView()
     c2.stopWatchManager.mode = .running
     c3.stopWatchManager.mode = .paused
     return
