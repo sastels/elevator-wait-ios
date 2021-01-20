@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0190061B25B732C700010A92 /* elevator_waitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190061A25B732C700010A92 /* elevator_waitApp.swift */; };
-		0190061D25B732C700010A92 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190061C25B732C700010A92 /* ContentView.swift */; };
+		0190061D25B732C700010A92 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190061C25B732C700010A92 /* TimerView.swift */; };
 		0190061F25B732C800010A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190061E25B732C800010A92 /* Assets.xcassets */; };
 		0190062225B732C800010A92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190062125B732C800010A92 /* Preview Assets.xcassets */; };
 		0190062D25B732C800010A92 /* elevator_waitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190062C25B732C800010A92 /* elevator_waitTests.swift */; };
@@ -23,6 +23,7 @@
 		0190065625B732C900010A92 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190065525B732C900010A92 /* ComplicationController.swift */; };
 		0190065825B732CA00010A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190065725B732CA00010A92 /* Assets.xcassets */; };
 		0190065B25B732CA00010A92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190065A25B732CA00010A92 /* Preview Assets.xcassets */; };
+		0190067C25B74DCF00010A92 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190067B25B74DCF00010A92 /* StopWatchManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +85,7 @@
 /* Begin PBXFileReference section */
 		0190061725B732C700010A92 /* elevator-wait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "elevator-wait.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0190061A25B732C700010A92 /* elevator_waitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elevator_waitApp.swift; sourceTree = "<group>"; };
-		0190061C25B732C700010A92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0190061C25B732C700010A92 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		0190061E25B732C800010A92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0190062125B732C800010A92 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0190062325B732C800010A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		0190065A25B732CA00010A92 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0190065C25B732CA00010A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0190065D25B732CA00010A92 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0190067B25B74DCF00010A92 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +170,9 @@
 		0190061925B732C700010A92 /* elevator-wait */ = {
 			isa = PBXGroup;
 			children = (
+				0190067B25B74DCF00010A92 /* StopWatchManager.swift */,
 				0190061A25B732C700010A92 /* elevator_waitApp.swift */,
-				0190061C25B732C700010A92 /* ContentView.swift */,
+				0190061C25B732C700010A92 /* TimerView.swift */,
 				0190061E25B732C800010A92 /* Assets.xcassets */,
 				0190062325B732C800010A92 /* Info.plist */,
 				0190062025B732C800010A92 /* Preview Content */,
@@ -426,7 +429,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0190061D25B732C700010A92 /* ContentView.swift in Sources */,
+				0190067C25B74DCF00010A92 /* StopWatchManager.swift in Sources */,
+				0190061D25B732C700010A92 /* TimerView.swift in Sources */,
 				0190061B25B732C700010A92 /* elevator_waitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
