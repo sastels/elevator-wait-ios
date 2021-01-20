@@ -34,7 +34,7 @@ class elevator_waitUITests: XCTestCase {
     let app = XCUIApplication()
     app.launch()
 
-    XCTAssert(!app.buttons["Start"].exists)
+    XCTAssert(app.buttons["Start"].exists)
     XCTAssert(!app.buttons["Pause"].exists)
     XCTAssert(!app.buttons["Continue"].exists)
     XCTAssert(!app.buttons["Submit"].exists)
