@@ -24,6 +24,16 @@
 		0190065825B732CA00010A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190065725B732CA00010A92 /* Assets.xcassets */; };
 		0190065B25B732CA00010A92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190065A25B732CA00010A92 /* Preview Assets.xcassets */; };
 		0190067C25B74DCF00010A92 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190067B25B74DCF00010A92 /* StopWatchManager.swift */; };
+		01AE8A4B25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
+		01AE8A4C25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
+		01AE8A4D25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
+		01AE8A4E25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
+		01AE8A4F25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
+		4C9B063658459A226EAD0BDB /* Pods_elevator_wait_elevator_waitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398C3A8148D6BCB108B7D6A3 /* Pods_elevator_wait_elevator_waitUITests.framework */; };
+		52F3924CC8222A84F59C6850 /* Pods_elevator_wait_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA895BF409150F8F329A266F /* Pods_elevator_wait_WatchKit_App.framework */; };
+		AA19098DA85C975E1E7DD6B5 /* Pods_elevator_wait_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C86D3BC77F1140AF97B230 /* Pods_elevator_wait_WatchKit_Extension.framework */; };
+		D48D6A70420B33178C110563 /* Pods_elevator_waitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59041E5C589E5F5D83C93EBC /* Pods_elevator_waitTests.framework */; };
+		D68E0D82CAE5E28F0B3544DA /* Pods_elevator_wait.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F6F6DD9B805F6BC4DE7175 /* Pods_elevator_wait.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +119,22 @@
 		0190065C25B732CA00010A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0190065D25B732CA00010A92 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		0190067B25B74DCF00010A92 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
+		01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0C193FAFDCA2AB6F67B8648F /* Pods-elevator-wait WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit Extension/Pods-elevator-wait WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		0F91A08FF472F2A022FD21F5 /* Pods-elevator-wait WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit App/Pods-elevator-wait WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		2A297780264F9B7EB0E6B25D /* Pods-elevator-waitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-waitTests.release.xcconfig"; path = "Target Support Files/Pods-elevator-waitTests/Pods-elevator-waitTests.release.xcconfig"; sourceTree = "<group>"; };
+		398C3A8148D6BCB108B7D6A3 /* Pods_elevator_wait_elevator_waitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_elevator_wait_elevator_waitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4031352E84A08D29B79B3FC1 /* Pods-elevator-waitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-waitTests.debug.xcconfig"; path = "Target Support Files/Pods-elevator-waitTests/Pods-elevator-waitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59041E5C589E5F5D83C93EBC /* Pods_elevator_waitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_elevator_waitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64C86D3BC77F1140AF97B230 /* Pods_elevator_wait_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_elevator_wait_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D033A4D96C0C3695718CC96 /* Pods-elevator-wait.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait.release.xcconfig"; path = "Target Support Files/Pods-elevator-wait/Pods-elevator-wait.release.xcconfig"; sourceTree = "<group>"; };
+		A0F6F6DD9B805F6BC4DE7175 /* Pods_elevator_wait.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_elevator_wait.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A62291C877B5803C543E9A00 /* Pods-elevator-wait-elevator-waitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait-elevator-waitUITests.debug.xcconfig"; path = "Target Support Files/Pods-elevator-wait-elevator-waitUITests/Pods-elevator-wait-elevator-waitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0881AE46C4A56225B63B4EE /* Pods-elevator-wait WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit App/Pods-elevator-wait WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		CA895BF409150F8F329A266F /* Pods_elevator_wait_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_elevator_wait_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1EA6A9AB3AF9359DAD1A8A /* Pods-elevator-wait.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait.debug.xcconfig"; path = "Target Support Files/Pods-elevator-wait/Pods-elevator-wait.debug.xcconfig"; sourceTree = "<group>"; };
+		FE662EDC78EA2DD0456FF482 /* Pods-elevator-wait WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit Extension/Pods-elevator-wait WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		FF4F4BC0E21A8640DB725897 /* Pods-elevator-wait-elevator-waitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait-elevator-waitUITests.release.xcconfig"; path = "Target Support Files/Pods-elevator-wait-elevator-waitUITests/Pods-elevator-wait-elevator-waitUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D68E0D82CAE5E28F0B3544DA /* Pods_elevator_wait.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48D6A70420B33178C110563 /* Pods_elevator_waitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9B063658459A226EAD0BDB /* Pods_elevator_wait_elevator_waitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +166,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA19098DA85C975E1E7DD6B5 /* Pods_elevator_wait_WatchKit_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EE90D32C8AF094832600C2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F3924CC8222A84F59C6850 /* Pods_elevator_wait_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +190,8 @@
 				0190064025B732C800010A92 /* elevator-wait WatchKit App */,
 				0190064C25B732C900010A92 /* elevator-wait WatchKit Extension */,
 				0190061825B732C700010A92 /* Products */,
+				A37C3ED8B19C59CCCDD652CA /* Pods */,
+				77EA3D2CC641201E2A2E3DAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +214,7 @@
 				0190061A25B732C700010A92 /* elevator_waitApp.swift */,
 				0190061C25B732C700010A92 /* TimerView.swift */,
 				0190061E25B732C800010A92 /* Assets.xcassets */,
+				01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */,
 				0190062325B732C800010A92 /* Info.plist */,
 				0190062025B732C800010A92 /* Preview Content */,
 			);
@@ -239,6 +280,36 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		77EA3D2CC641201E2A2E3DAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0F6F6DD9B805F6BC4DE7175 /* Pods_elevator_wait.framework */,
+				CA895BF409150F8F329A266F /* Pods_elevator_wait_WatchKit_App.framework */,
+				64C86D3BC77F1140AF97B230 /* Pods_elevator_wait_WatchKit_Extension.framework */,
+				398C3A8148D6BCB108B7D6A3 /* Pods_elevator_wait_elevator_waitUITests.framework */,
+				59041E5C589E5F5D83C93EBC /* Pods_elevator_waitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A37C3ED8B19C59CCCDD652CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD1EA6A9AB3AF9359DAD1A8A /* Pods-elevator-wait.debug.xcconfig */,
+				8D033A4D96C0C3695718CC96 /* Pods-elevator-wait.release.xcconfig */,
+				0F91A08FF472F2A022FD21F5 /* Pods-elevator-wait WatchKit App.debug.xcconfig */,
+				C0881AE46C4A56225B63B4EE /* Pods-elevator-wait WatchKit App.release.xcconfig */,
+				FE662EDC78EA2DD0456FF482 /* Pods-elevator-wait WatchKit Extension.debug.xcconfig */,
+				0C193FAFDCA2AB6F67B8648F /* Pods-elevator-wait WatchKit Extension.release.xcconfig */,
+				A62291C877B5803C543E9A00 /* Pods-elevator-wait-elevator-waitUITests.debug.xcconfig */,
+				FF4F4BC0E21A8640DB725897 /* Pods-elevator-wait-elevator-waitUITests.release.xcconfig */,
+				4031352E84A08D29B79B3FC1 /* Pods-elevator-waitTests.debug.xcconfig */,
+				2A297780264F9B7EB0E6B25D /* Pods-elevator-waitTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,10 +317,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0190066825B732CA00010A92 /* Build configuration list for PBXNativeTarget "elevator-wait" */;
 			buildPhases = (
+				094769C7B7F9A9D5CAE99EC0 /* [CP] Check Pods Manifest.lock */,
 				0190061325B732C700010A92 /* Sources */,
 				0190061425B732C700010A92 /* Frameworks */,
 				0190061525B732C700010A92 /* Resources */,
 				0190066725B732CA00010A92 /* Embed Watch Content */,
+				3CBD343F157EBA97631721AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,6 +338,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0190066B25B732CA00010A92 /* Build configuration list for PBXNativeTarget "elevator-waitTests" */;
 			buildPhases = (
+				FE876960E071E0AC660599A4 /* [CP] Check Pods Manifest.lock */,
 				0190062425B732C800010A92 /* Sources */,
 				0190062525B732C800010A92 /* Frameworks */,
 				0190062625B732C800010A92 /* Resources */,
@@ -283,9 +357,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0190066E25B732CA00010A92 /* Build configuration list for PBXNativeTarget "elevator-waitUITests" */;
 			buildPhases = (
+				B00EC7839E6817B424D58A27 /* [CP] Check Pods Manifest.lock */,
 				0190062F25B732C800010A92 /* Sources */,
 				0190063025B732C800010A92 /* Frameworks */,
 				0190063125B732C800010A92 /* Resources */,
+				511B6B2E0D671DE0CE9AF4A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,8 +377,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0190066425B732CA00010A92 /* Build configuration list for PBXNativeTarget "elevator-wait WatchKit App" */;
 			buildPhases = (
+				D3389E0186EFCC296F9FA468 /* [CP] Check Pods Manifest.lock */,
 				0190063A25B732C800010A92 /* Resources */,
 				0190066325B732CA00010A92 /* Embed App Extensions */,
+				6EE90D32C8AF094832600C2E /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +396,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0190066025B732CA00010A92 /* Build configuration list for PBXNativeTarget "elevator-wait WatchKit Extension" */;
 			buildPhases = (
+				167DA2D262E99057B19E26E1 /* [CP] Check Pods Manifest.lock */,
 				0190064425B732C900010A92 /* Sources */,
 				0190064525B732C900010A92 /* Frameworks */,
 				0190064625B732C900010A92 /* Resources */,
@@ -388,6 +467,7 @@
 			files = (
 				0190062225B732C800010A92 /* Preview Assets.xcassets in Resources */,
 				0190061F25B732C800010A92 /* Assets.xcassets in Resources */,
+				01AE8A4B25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +475,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AE8A4C25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +483,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AE8A4D25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0190064225B732C900010A92 /* Assets.xcassets in Resources */,
+				01AE8A4E25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,10 +502,158 @@
 			files = (
 				0190065B25B732CA00010A92 /* Preview Assets.xcassets in Resources */,
 				0190065825B732CA00010A92 /* Assets.xcassets in Resources */,
+				01AE8A4F25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		094769C7B7F9A9D5CAE99EC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-elevator-wait-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		167DA2D262E99057B19E26E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-elevator-wait WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CBD343F157EBA97631721AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-elevator-wait/Pods-elevator-wait-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-elevator-wait/Pods-elevator-wait-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-elevator-wait/Pods-elevator-wait-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		511B6B2E0D671DE0CE9AF4A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-elevator-wait-elevator-waitUITests/Pods-elevator-wait-elevator-waitUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-elevator-wait-elevator-waitUITests/Pods-elevator-wait-elevator-waitUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-elevator-wait-elevator-waitUITests/Pods-elevator-wait-elevator-waitUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B00EC7839E6817B424D58A27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-elevator-wait-elevator-waitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3389E0186EFCC296F9FA468 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-elevator-wait WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE876960E071E0AC660599A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-elevator-waitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0190061325B732C700010A92 /* Sources */ = {
@@ -602,6 +833,7 @@
 		};
 		0190066125B732CA00010A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE662EDC78EA2DD0456FF482 /* Pods-elevator-wait WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -626,6 +858,7 @@
 		};
 		0190066225B732CA00010A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C193FAFDCA2AB6F67B8648F /* Pods-elevator-wait WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -651,6 +884,7 @@
 		};
 		0190066525B732CA00010A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F91A08FF472F2A022FD21F5 /* Pods-elevator-wait WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -671,6 +905,7 @@
 		};
 		0190066625B732CA00010A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0881AE46C4A56225B63B4EE /* Pods-elevator-wait WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -692,6 +927,7 @@
 		};
 		0190066925B732CA00010A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD1EA6A9AB3AF9359DAD1A8A /* Pods-elevator-wait.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -715,6 +951,7 @@
 		};
 		0190066A25B732CA00010A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D033A4D96C0C3695718CC96 /* Pods-elevator-wait.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -739,6 +976,7 @@
 		};
 		0190066C25B732CA00010A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4031352E84A08D29B79B3FC1 /* Pods-elevator-waitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -762,6 +1000,7 @@
 		};
 		0190066D25B732CA00010A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A297780264F9B7EB0E6B25D /* Pods-elevator-waitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -786,6 +1025,7 @@
 		};
 		0190066F25B732CA00010A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A62291C877B5803C543E9A00 /* Pods-elevator-wait-elevator-waitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -808,6 +1048,7 @@
 		};
 		0190067025B732CA00010A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF4F4BC0E21A8640DB725897 /* Pods-elevator-wait-elevator-waitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
