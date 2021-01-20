@@ -99,17 +99,21 @@ struct TimerView: View {
     dateFormatter.locale = Locale.current
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZ"
     let dateString = dateFormatter.string(from: Date())
-    self.db.collection(self.timerName)
-      .document(dateString)
-      .setData([
-        "wait": wait,
-        "when": dateString,
-      ])
-    { err in
-      if let err = err {
-        print("Error adding document: \(err)")
-      } else {
-        print("Submitted  \(dateString) : \(wait)")
+    
+    Auth.auth().signInAnonymously() { (authResult, error) in
+      guard (authResult?.user) != nil else { return }
+      self.db.collection(self.timerName)
+        .document(dateString)
+        .setData([
+          "wait": wait,
+          "when": dateString,
+        ])
+      { err in
+        if let err = err {
+          print("Error adding document: \(err)")
+        } else {
+          print("Submitted  \(dateString) : \(wait)")
+        }
       }
     }
   }
