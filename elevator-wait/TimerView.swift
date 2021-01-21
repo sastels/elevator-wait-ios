@@ -5,21 +5,23 @@
 //  Created by Stephen Astels on 2021-01-19.
 //
 
+import Firebase
 import SwiftUI
 
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
   
   var timerName = "test"
+  let db = Firestore.firestore()
   
   var body: some View {
     VStack {
       Text("Timer: \(timerName)")
       Spacer()
       
-        let minutes = stopWatchManager.secondsElapsed / 60
-        let seconds = stopWatchManager.secondsElapsed % 60
-        Text("Elapsed: \(String(format: "%02d:%02d", minutes, seconds))")
+      let minutes = (stopWatchManager.secondsElapsed / 60.0).rounded(.down)
+      let seconds = (stopWatchManager.secondsElapsed - 60.0 * minutes)
+      Text("Elapsed: \(String(format: "%02.0f:%02.0f", minutes, seconds))")
       
       Spacer()
       switch stopWatchManager.mode {
@@ -28,7 +30,7 @@ struct TimerView: View {
             Text("Start")
               .fontWeight(.bold)
               .font(.title2)
-              .frame(width:100)
+              .frame(width: 100)
               .padding()
               .background(Color.purple)
               .cornerRadius(40)
@@ -39,7 +41,7 @@ struct TimerView: View {
             Text("Pause")
               .fontWeight(.bold)
               .font(.title2)
-              .frame(width:100)
+              .frame(width: 100)
               .padding()
               .background(Color.purple)
               .cornerRadius(40)
@@ -52,23 +54,25 @@ struct TimerView: View {
                 Text("Continue")
                   .fontWeight(.bold)
                   .font(.title2)
-                  .frame(width:100)
+                  .frame(width: 100)
                   .padding()
                   .background(Color.purple)
                   .cornerRadius(40)
                   .foregroundColor(.white)
               }
               Spacer()
-              Button(action: {}) {
+              Button(action: {
+                self.submit()
+                stopWatchManager.stop()
+              }) {
                 Text("Submit")
                   .fontWeight(.bold)
                   .font(.title2)
-                  .frame(width:100)
+                  .frame(width: 100)
                   .padding()
                   .background(Color.purple)
                   .cornerRadius(40)
                   .foregroundColor(.white)
-                  
               }
             }
             
@@ -76,7 +80,7 @@ struct TimerView: View {
               Text("Reset")
                 .fontWeight(.bold)
                 .font(.title2)
-                .frame(width:100)
+                .frame(width: 100)
                 .padding()
                 .background(Color.red)
                 .cornerRadius(40)
@@ -87,6 +91,31 @@ struct TimerView: View {
       
       Spacer()
     }.padding()
+  }
+  
+  func submit() {
+    let wait = round(self.stopWatchManager.secondsElapsed * 10) / 10
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale.current
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZ"
+    let dateString = dateFormatter.string(from: Date())
+    
+    Auth.auth().signInAnonymously() { (authResult, error) in
+      guard (authResult?.user) != nil else { return }
+      self.db.collection(self.timerName)
+        .document(dateString)
+        .setData([
+          "wait": wait,
+          "when": dateString,
+        ])
+      { err in
+        if let err = err {
+          print("Error adding document: \(err)")
+        } else {
+          print("Submitted  \(dateString) : \(wait)")
+        }
+      }
+    }
   }
 }
 

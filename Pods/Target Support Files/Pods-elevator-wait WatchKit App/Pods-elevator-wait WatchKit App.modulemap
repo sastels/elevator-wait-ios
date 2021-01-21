@@ -1,0 +1,6 @@
+framework module Pods_elevator_wait_WatchKit_App {
+  umbrella header "Pods-elevator-wait WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}

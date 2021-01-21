@@ -1,0 +1,6 @@
+framework module Pods_elevator_wait_elevator_waitUITests {
+  umbrella header "Pods-elevator-wait-elevator-waitUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

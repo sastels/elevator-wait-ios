@@ -10,12 +10,12 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,name=iPhone 11']
+          destination: ['platform=iOS Simulator,OS=14.2,name=iPhone 11']
     steps:
       - name: Checkout
         uses: actions/checkout@master
       - name: Run tests
         run: |
-          xcodebuild clean test -workspace  elevator-wait.xcodeproj/project.xcworkspace -scheme elevator-wait -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean test -workspace  elevator-wait.xcworkspace -scheme elevator-wait -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}

@@ -16,7 +16,7 @@ enum StopWatchMode {
 }
 
 class StopWatchManager: ObservableObject {
-  @Published var secondsElapsed = 0
+  @Published var secondsElapsed = 0.0
   @Published var mode: StopWatchMode = .stopped
 
   var timer = Timer()
@@ -24,8 +24,8 @@ class StopWatchManager: ObservableObject {
   func start() {
     print("Timer started!")
     mode = .running
-    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-      self.secondsElapsed += 1
+    timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+      self.secondsElapsed += 0.1
     }
   }
 
