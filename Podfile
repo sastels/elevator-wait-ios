@@ -8,7 +8,6 @@ target 'elevator-wait' do
   # Pods for elevator-wait
 
   # add the Firebase pod for Google Analytics
-  pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Auth'
