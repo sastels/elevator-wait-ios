@@ -119,7 +119,7 @@ struct TimerView: View {
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TimerView_Previews: PreviewProvider {
   static var previews: some View {
     let c1 = TimerView()
     let c2 = TimerView()
