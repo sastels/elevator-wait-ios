@@ -23,6 +23,6 @@ jobs:
             ${{ runner.os }}-pods-
       - name: Run tests
         run: |
-          xcodebuild clean test -parallelizeTargets -workspace  elevator-wait.xcworkspace -scheme elevator-wait -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild test -parallelizeTargets -workspace  elevator-wait.xcworkspace -scheme elevator-wait -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
