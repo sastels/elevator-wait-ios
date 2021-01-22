@@ -17,7 +17,6 @@
 		0190064225B732C900010A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190064125B732C900010A92 /* Assets.xcassets */; };
 		0190064925B732C900010A92 /* elevator-wait WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0190064825B732C900010A92 /* elevator-wait WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0190064E25B732C900010A92 /* elevator_waitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190064D25B732C900010A92 /* elevator_waitApp.swift */; };
-		0190065025B732C900010A92 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190064F25B732C900010A92 /* ContentView.swift */; };
 		0190065225B732C900010A92 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190065125B732C900010A92 /* NotificationController.swift */; };
 		0190065425B732C900010A92 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190065325B732C900010A92 /* NotificationView.swift */; };
 		0190065625B732C900010A92 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190065525B732C900010A92 /* ComplicationController.swift */; };
@@ -29,6 +28,8 @@
 		01AE8A4D25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01AE8A4E25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01AE8A4F25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
+		01E810F225BA30E200429861 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190067B25B74DCF00010A92 /* StopWatchManager.swift */; };
+		01E8111F25BA35C200429861 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8111E25BA35C200429861 /* TimerView.swift */; };
 		4C9B063658459A226EAD0BDB /* Pods_elevator_wait_elevator_waitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398C3A8148D6BCB108B7D6A3 /* Pods_elevator_wait_elevator_waitUITests.framework */; };
 		52F3924CC8222A84F59C6850 /* Pods_elevator_wait_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA895BF409150F8F329A266F /* Pods_elevator_wait_WatchKit_App.framework */; };
 		AA19098DA85C975E1E7DD6B5 /* Pods_elevator_wait_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C86D3BC77F1140AF97B230 /* Pods_elevator_wait_WatchKit_Extension.framework */; };
@@ -110,7 +111,6 @@
 		0190064325B732C900010A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0190064825B732C900010A92 /* elevator-wait WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "elevator-wait WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0190064D25B732C900010A92 /* elevator_waitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elevator_waitApp.swift; sourceTree = "<group>"; };
-		0190064F25B732C900010A92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0190065125B732C900010A92 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		0190065325B732C900010A92 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		0190065525B732C900010A92 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -120,6 +120,7 @@
 		0190065D25B732CA00010A92 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		0190067B25B74DCF00010A92 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
 		01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01E8111E25BA35C200429861 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		0C193FAFDCA2AB6F67B8648F /* Pods-elevator-wait WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit Extension/Pods-elevator-wait WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		0F91A08FF472F2A022FD21F5 /* Pods-elevator-wait WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit App/Pods-elevator-wait WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		2A297780264F9B7EB0E6B25D /* Pods-elevator-waitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-waitTests.release.xcconfig"; path = "Target Support Files/Pods-elevator-waitTests/Pods-elevator-waitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -260,7 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				0190064D25B732C900010A92 /* elevator_waitApp.swift */,
-				0190064F25B732C900010A92 /* ContentView.swift */,
+				01E8111E25BA35C200429861 /* TimerView.swift */,
 				0190065125B732C900010A92 /* NotificationController.swift */,
 				0190065325B732C900010A92 /* NotificationView.swift */,
 				0190065525B732C900010A92 /* ComplicationController.swift */,
@@ -685,8 +686,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E8111F25BA35C200429861 /* TimerView.swift in Sources */,
 				0190065225B732C900010A92 /* NotificationController.swift in Sources */,
-				0190065025B732C900010A92 /* ContentView.swift in Sources */,
+				01E810F225BA30E200429861 /* StopWatchManager.swift in Sources */,
 				0190065625B732C900010A92 /* ComplicationController.swift in Sources */,
 				0190064E25B732C900010A92 /* elevator_waitApp.swift in Sources */,
 				0190065425B732C900010A92 /* NotificationView.swift in Sources */,
