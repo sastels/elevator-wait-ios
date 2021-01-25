@@ -103,8 +103,8 @@ struct TimerView: View {
     let fields = [
       "wait": ["doubleValue": wait],
       "when": ["stringValue": dateString],
-    ]
-    postData(collection: self.timerName, fields: fields)
+    ]    
+    postWithAuth(collection: self.timerName, fields: fields)
   }
 }
 
