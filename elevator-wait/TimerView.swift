@@ -7,97 +7,75 @@
 
 import SwiftUI
 
+struct PhoneButtonStyle: ButtonStyle {
+  var bgColor: Color
+
+  func makeBody(configuration: Self.Configuration) -> some View {
+    configuration.label
+      .font(.title2)
+      .frame(minWidth: 0,
+             maxWidth: .infinity)
+      .foregroundColor(.white)
+      .cornerRadius(40)
+      .padding()
+      .background(RoundedRectangle(cornerRadius: 41.0).fill(self.bgColor)
+      )
+  }
+}
+
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
-  
+
   var timerName = "test"
-  
+
   var body: some View {
     VStack {
       Text("Timer: \(timerName)")
       Spacer()
-      
+
       let minutes = (stopWatchManager.secondsElapsed / 60.0).rounded(.down)
       let seconds = (stopWatchManager.secondsElapsed - 60.0 * minutes)
-      Text("Elapsed: \(String(format: "%02.0f:%02.0f", minutes, seconds))")
-      
+      Text("\(String(format: "%02.0f:%02.0f", minutes, seconds))").font(.title)
       Spacer()
+      
       switch stopWatchManager.mode {
         case .stopped:
           Button(action: { stopWatchManager.start() }) {
-            Text("Start")
-              .fontWeight(.bold)
-              .font(.title2)
-              .frame(width: 100)
-              .padding()
-              .background(Color.purple)
-              .cornerRadius(40)
-              .foregroundColor(.white)
-          }
+            Text("Start").fontWeight(.bold)
+          }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
         case .running:
           Button(action: { stopWatchManager.pause() }) {
             Text("Pause")
               .fontWeight(.bold)
-              .font(.title2)
-              .frame(width: 100)
-              .padding()
-              .background(Color.purple)
-              .cornerRadius(40)
-              .foregroundColor(.white)
-          }
+          }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
         case .paused:
-          VStack {
-            HStack {
-              Button(action: { stopWatchManager.start() }) {
-                Text("Continue")
-                  .fontWeight(.bold)
-                  .font(.title2)
-                  .frame(width: 100)
-                  .padding()
-                  .background(Color.purple)
-                  .cornerRadius(40)
-                  .foregroundColor(.white)
-              }
-              Spacer()
-              Button(action: {
-                self.submit()
-                stopWatchManager.stop()
+          VStack(spacing: 10) {
+            Button(action: { stopWatchManager.start() }) {
+              Text("Continue").fontWeight(.bold)
+            }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
+            Button(action: {
+              submit()
+              stopWatchManager.stop()
               }) {
-                Text("Submit")
-                  .fontWeight(.bold)
-                  .font(.title2)
-                  .frame(width: 100)
-                  .padding()
-                  .background(Color.purple)
-                  .cornerRadius(40)
-                  .foregroundColor(.white)
-              }
-            }
-            
+              Text("Submit").fontWeight(.bold)
+            }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
+            Spacer().frame(height: 10)
             Button(action: { stopWatchManager.stop() }) {
-              Text("Reset")
-                .fontWeight(.bold)
-                .font(.title2)
-                .frame(width: 100)
-                .padding()
-                .background(Color.red)
-                .cornerRadius(40)
-                .foregroundColor(.white)
-            }.padding()
+              Text("Reset").fontWeight(.bold)
+            }.buttonStyle(PhoneButtonStyle(bgColor: .red))
           }
       }
-      
       Spacer()
     }.padding()
   }
-  
+
   func submit() {
     let wait = round(self.stopWatchManager.secondsElapsed * 10) / 10
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale.current
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZ"
     let dateString = dateFormatter.string(from: Date())
-    
+
     let fields = [
       "wait": ["doubleValue": wait],
       "when": ["stringValue": dateString],
