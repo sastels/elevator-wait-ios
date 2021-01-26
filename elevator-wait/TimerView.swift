@@ -5,14 +5,12 @@
 //  Created by Stephen Astels on 2021-01-19.
 //
 
-import Firebase
 import SwiftUI
 
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
   
   var timerName = "test"
-  let db = Firestore.firestore()
   
   var body: some View {
     VStack {
@@ -100,22 +98,11 @@ struct TimerView: View {
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZ"
     let dateString = dateFormatter.string(from: Date())
     
-    Auth.auth().signInAnonymously() { (authResult, error) in
-      guard (authResult?.user) != nil else { return }
-      self.db.collection(self.timerName)
-        .document(dateString)
-        .setData([
-          "wait": wait,
-          "when": dateString,
-        ])
-      { err in
-        if let err = err {
-          print("Error adding document: \(err)")
-        } else {
-          print("Submitted  \(dateString) : \(wait)")
-        }
-      }
-    }
+    let fields = [
+      "wait": ["doubleValue": wait],
+      "when": ["stringValue": dateString],
+    ]
+    postWithAuth(collection: self.timerName, fields: fields)
   }
 }
 

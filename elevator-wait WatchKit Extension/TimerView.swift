@@ -60,7 +60,7 @@ struct TimerView: View {
                 .foregroundColor(.white)
             }
             Button(action: {
-              // TODO: submit somehow!!
+              submit()
               stopWatchManager.stop()
               }) {
               Text("Submit")
@@ -86,6 +86,21 @@ struct TimerView: View {
       }
     }
   }
+  
+  func submit() {
+    let wait = round(self.stopWatchManager.secondsElapsed * 10) / 10
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale.current
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZ"
+    let dateString = dateFormatter.string(from: Date())
+    
+    let fields = [
+      "wait": ["doubleValue": wait],
+      "when": ["stringValue": dateString],
+    ]
+    postWithAuth(collection: self.timerName, fields: fields)
+  }
+  
 }
 
 struct TimerView_Previews: PreviewProvider {

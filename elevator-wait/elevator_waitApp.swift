@@ -5,14 +5,12 @@
 //  Created by Stephen Astels on 2021-01-19.
 //
 
-import Firebase
 import SwiftUI
 import UIKit
 
-// no changes in your AppDelegate class
+// TODO delete this
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-    FirebaseApp.configure()
     return true
   }
 }
