@@ -5,14 +5,12 @@
 //  Created by Stephen Astels on 2021-01-19.
 //
 
-import Firebase
 import SwiftUI
 
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
   
   var timerName = "test"
-  let db = Firestore.firestore()
   
   var body: some View {
     VStack {
