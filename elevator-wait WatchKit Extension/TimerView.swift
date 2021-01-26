@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WatchButtonStyle: ButtonStyle {
+  var bgColor: Color
+
   func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
       .font(.title3)
@@ -16,25 +18,10 @@ struct WatchButtonStyle: ButtonStyle {
       .foregroundColor(.white)
       .cornerRadius(40)
       .padding(5)
-      .background(RoundedRectangle(cornerRadius: 41.0).fill(Color.purple)
+      .background(RoundedRectangle(cornerRadius: 41.0).fill(self.bgColor)
       )
   }
 }
-
-struct WatchButtonStyleRed: ButtonStyle {
-  func makeBody(configuration: Self.Configuration) -> some View {
-    configuration.label
-      .font(.title3)
-      .frame(minWidth: 0,
-             maxWidth: .infinity)
-      .foregroundColor(.white)
-      .cornerRadius(40)
-      .padding(5)
-      .background(RoundedRectangle(cornerRadius: 41.0).fill(Color.red)
-      )
-  }
-}
-
 
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
@@ -56,26 +43,25 @@ struct TimerView: View {
         case .stopped:
           Button(action: { stopWatchManager.start() }) {
             Text("Start").fontWeight(.bold)
-          }.buttonStyle(WatchButtonStyle())
+          }.buttonStyle(WatchButtonStyle(bgColor: .purple))
         case .running:
           Button(action: { stopWatchManager.pause() }) {
             Text("Pause").fontWeight(.bold)
-          }.buttonStyle(WatchButtonStyle())
-
+          }.buttonStyle(WatchButtonStyle(bgColor: .purple))
         case .paused:
-          VStack(spacing:10) {
+          VStack(spacing: 10) {
             Button(action: { stopWatchManager.start() }) {
               Text("Continue").fontWeight(.bold)
-            }.buttonStyle(WatchButtonStyle())
+            }.buttonStyle(WatchButtonStyle(bgColor: .purple))
             Button(action: {
               submit()
               stopWatchManager.stop()
               }) {
               Text("Submit").fontWeight(.bold)
-            }.buttonStyle(WatchButtonStyle())
+            }.buttonStyle(WatchButtonStyle(bgColor: .purple))
             Button(action: { stopWatchManager.stop() }) {
               Text("Reset").fontWeight(.bold)
-            }.buttonStyle(WatchButtonStyleRed())
+            }.buttonStyle(WatchButtonStyle(bgColor: .red))
           }
       }
     }
