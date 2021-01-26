@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+struct WatchButtonStyle: ButtonStyle {
+  var bgColor: Color
+
+  func makeBody(configuration: Self.Configuration) -> some View {
+    configuration.label
+      .font(.title3)
+      .frame(minWidth: 0,
+             maxWidth: .infinity)
+      .foregroundColor(.white)
+      .cornerRadius(40)
+      .padding(5)
+      .background(RoundedRectangle(cornerRadius: 41.0).fill(self.bgColor)
+      )
+  }
+}
+
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
 
@@ -26,81 +42,44 @@ struct TimerView: View {
       switch stopWatchManager.mode {
         case .stopped:
           Button(action: { stopWatchManager.start() }) {
-            Text("Start")
-              .fontWeight(.bold)
-              .font(.callout)
-              .frame(width: 60)
-              .padding()
-              .background(Color.purple)
-              .cornerRadius(40)
-              .foregroundColor(.white)
-          }
+            Text("Start").fontWeight(.bold)
+          }.buttonStyle(WatchButtonStyle(bgColor: .purple))
         case .running:
           Button(action: { stopWatchManager.pause() }) {
-            Text("Pause")
-              .fontWeight(.bold)
-              .font(.callout)
-              .frame(width: 60)
-              .padding()
-              .background(Color.purple)
-              .cornerRadius(40)
-              .foregroundColor(.white)
-          }
-
+            Text("Pause").fontWeight(.bold)
+          }.buttonStyle(WatchButtonStyle(bgColor: .purple))
         case .paused:
-          VStack {
+          VStack(spacing: 10) {
             Button(action: { stopWatchManager.start() }) {
-              Text("Continue")
-                .fontWeight(.bold)
-                .font(.callout)
-                .frame(width: 80)
-                .padding()
-                .background(Color.purple)
-                .cornerRadius(40)
-                .foregroundColor(.white)
-            }
+              Text("Continue").fontWeight(.bold)
+            }.buttonStyle(WatchButtonStyle(bgColor: .purple))
             Button(action: {
               submit()
               stopWatchManager.stop()
               }) {
-              Text("Submit")
-                .fontWeight(.bold)
-                .font(.callout)
-                .frame(width: 70)
-                .padding()
-                .background(Color.purple)
-                .cornerRadius(40)
-                .foregroundColor(.white)
-            }
+              Text("Submit").fontWeight(.bold)
+            }.buttonStyle(WatchButtonStyle(bgColor: .purple))
             Button(action: { stopWatchManager.stop() }) {
-              Text("Reset")
-                .fontWeight(.bold)
-                .font(.callout)
-                .frame(width: 70)
-                .padding()
-                .background(Color.red)
-                .cornerRadius(40)
-                .foregroundColor(.white)
-            }
+              Text("Reset").fontWeight(.bold)
+            }.buttonStyle(WatchButtonStyle(bgColor: .red))
           }
       }
     }
   }
-  
+
   func submit() {
     let wait = round(self.stopWatchManager.secondsElapsed * 10) / 10
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale.current
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzzZ"
     let dateString = dateFormatter.string(from: Date())
-    
+
     let fields = [
       "wait": ["doubleValue": wait],
       "when": ["stringValue": dateString],
     ]
     postWithAuth(collection: self.timerName, fields: fields)
   }
-  
 }
 
 struct TimerView_Previews: PreviewProvider {
