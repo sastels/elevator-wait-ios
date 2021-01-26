@@ -25,13 +25,13 @@ struct WatchButtonStyle: ButtonStyle {
 
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
-
-  var timerName = "test"
+  @State var timerName = "test"
 
   var body: some View {
     VStack {
       if stopWatchManager.mode != .paused {
-        Text("Timer: \(timerName)")
+        TextField("Enter collection...", text: $timerName).padding()
+          .multilineTextAlignment(.center)
         Spacer()
       }
       let minutes = (stopWatchManager.secondsElapsed / 60.0).rounded(.down)
@@ -39,6 +39,7 @@ struct TimerView: View {
       Text("Elapsed: \(String(format: "%02.0f:%02.0f", minutes, seconds))")
 
       Spacer()
+      VStack { // just to disable buttons
       switch stopWatchManager.mode {
         case .stopped:
           Button(action: { stopWatchManager.start() }) {
@@ -64,6 +65,7 @@ struct TimerView: View {
             }.buttonStyle(WatchButtonStyle(bgColor: .red))
           }
       }
+      }.disabled(timerName.isEmpty)
     }
   }
 
