@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		0190065825B732CA00010A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190065725B732CA00010A92 /* Assets.xcassets */; };
 		0190065B25B732CA00010A92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190065A25B732CA00010A92 /* Preview Assets.xcassets */; };
 		0190067C25B74DCF00010A92 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190067B25B74DCF00010A92 /* StopWatchManager.swift */; };
+		019ADBD225BFAED2009D2E1B /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017103B225BF1BFD00CB4D09 /* FirebaseUtils.swift */; };
 		01AE8A4B25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01AE8A4C25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01AE8A4D25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
@@ -667,6 +668,7 @@
 				01E810F225BA30E200429861 /* StopWatchManager.swift in Sources */,
 				0190065625B732C900010A92 /* ComplicationController.swift in Sources */,
 				0190064E25B732C900010A92 /* elevator_waitApp.swift in Sources */,
+				019ADBD225BFAED2009D2E1B /* FirebaseUtils.swift in Sources */,
 				0190065425B732C900010A92 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
