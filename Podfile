@@ -7,8 +7,7 @@ target 'elevator-wait' do
 
   # Pods for elevator-wait
 
-  # add pods for any other desired Firebase products
-  # https://firebase.google.com/docs/ios/setup#available-pods
+  pod 'Charts'
   
   target 'elevator-waitTests' do
     inherit! :search_paths
