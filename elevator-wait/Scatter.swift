@@ -21,12 +21,12 @@ struct Scatter: UIViewRepresentable {
     leftAxis.setLabelCount(7, force: true)
 
     chart.rightAxis.enabled = false
-    
+
     let xAxis = chart.xAxis
     xAxis.axisMaximum = 6
     xAxis.axisMinimum = 0
     xAxis.setLabelCount(7, force: true)
-    
+
     // it is convenient to form chart data in a separate func
     chart.data = addData()
     return chart
@@ -54,13 +54,11 @@ struct Scatter: UIViewRepresentable {
 struct Scatter_Previews: PreviewProvider {
   static var previews: some View {
     Scatter(entries: [
-      // x - position of a bar, y - height of a bar
       ChartDataEntry(x: 1, y: 1),
       ChartDataEntry(x: 2, y: 2),
       ChartDataEntry(x: 3, y: 3),
       ChartDataEntry(x: 4, y: 4),
       ChartDataEntry(x: 5, y: 5)
-
     ])
   }
 }
