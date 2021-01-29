@@ -22,7 +22,7 @@ struct elevator_waitApp: App {
 
   var body: some Scene {
     WindowGroup {
-      TimerView()
+      DataView(timerName: "test", entries: [])
     }
   }
 }

@@ -13,6 +13,9 @@ struct DataView: View {
   var entries: [ChartDataEntry]
 
   var body: some View {
+    
+    getWithAuth(collection: timerName)
+    
     return (
       VStack {
         Text(timerName)
