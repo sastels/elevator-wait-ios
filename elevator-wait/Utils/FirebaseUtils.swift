@@ -136,11 +136,10 @@ func getData(collection: String, authToken: String, completionHandler: @escaping
     }
 
     completionHandler(returnedData)
-//    print("++++++ \(returnedData)")
   }.resume()
 }
 
-func getWithAuth(collection: String) {
+func getWithAuth(collection: String, completionHandler: @escaping ([ElevatorData]) -> Void) {
   let API_KEY = "AIzaSyB5G-uKZFraF9HvoXRt9oi1Iiq06spWWtM"
   let BASE = "https://identitytoolkit.googleapis.com/v1/accounts:signUp"
 
@@ -169,8 +168,9 @@ func getWithAuth(collection: String) {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
         if let idToken = json["idToken"] as? String {
           getData(collection: collection, authToken: idToken) {
-            (records) in
-            print("+++ records \(records)")
+            records in
+            completionHandler(records)
+//            print("+++ records \(records)")
           }
         }
       } catch {

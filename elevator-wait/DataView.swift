@@ -13,9 +13,11 @@ struct DataView: View {
   var entries: [ChartDataEntry]
 
   var body: some View {
-    
-    getWithAuth(collection: timerName)
-    
+    getWithAuth(collection: timerName) {
+      records in
+      print("+++ view! \(records)")
+    }
+
     return (
       VStack {
         Text(timerName)
