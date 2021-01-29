@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct ElevatorData {
+  var when: String
+  var wait: Double
+}
+
 func postData(collection: String, fields: [String: Any], authToken: String) {
   let BASE = "https://firestore.googleapis.com/v1"
   let PROJECT_ID = "elevator-wait"
@@ -92,7 +97,6 @@ func getData(collection: String, authToken: String) {
   let PROJECT_ID = "elevator-wait"
   let collectionAddress = BASE + "/projects/\(PROJECT_ID)/databases/(default)/documents/\(collection)"
 
-  var allData:[ [String:Any]] = []
   guard let serviceUrl = URL(string: collectionAddress) else { return }
 
   var request = URLRequest(url: serviceUrl)
@@ -103,6 +107,9 @@ func getData(collection: String, authToken: String) {
   request.timeoutInterval = 20
   let session = URLSession.shared
   session.dataTask(with: request) { data, response, error in
+
+    var returnedData: [ElevatorData] = []
+
     if let response = response {
       print(response)
     }
@@ -110,14 +117,14 @@ func getData(collection: String, authToken: String) {
       do {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
         print("--------------- Get ---------------")
+
         if let fields = json["documents"] as? [[String: Any]] {
           for field in fields {
             let xxx = field["fields"] as! [String: NSDictionary]
-            let when = xxx["when"]!["stringValue"] ?? "none"
+            let when = (xxx["when"]!["stringValue"] ?? "none") as! String
             let wait = (xxx["wait"]!["doubleValue"] ?? 0) as! Double
-            allData.append(["when":when, "wait":wait])
+            returnedData.append(ElevatorData(when: when, wait: wait))
             print(" \(when), \(wait)")
-            
           }
         }
         print("--------------- Get ---------------")
@@ -127,6 +134,8 @@ func getData(collection: String, authToken: String) {
         print("--------------- Get ERROR ---------------")
       }
     }
+
+    print("++++++ \(returnedData)")
   }.resume()
 }
 
