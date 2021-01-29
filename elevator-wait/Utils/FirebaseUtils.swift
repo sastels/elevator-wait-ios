@@ -92,7 +92,7 @@ func postWithAuth(collection: String, fields: [String: Any]) {
   }.resume()
 }
 
-func getData(collection: String, authToken: String) {
+func getData(collection: String, authToken: String, completionHandler: @escaping ([ElevatorData]) -> Void) {
   let BASE = "https://firestore.googleapis.com/v1"
   let PROJECT_ID = "elevator-wait"
   let collectionAddress = BASE + "/projects/\(PROJECT_ID)/databases/(default)/documents/\(collection)"
@@ -135,7 +135,8 @@ func getData(collection: String, authToken: String) {
       }
     }
 
-    print("++++++ \(returnedData)")
+    completionHandler(returnedData)
+//    print("++++++ \(returnedData)")
   }.resume()
 }
 
@@ -167,7 +168,10 @@ func getWithAuth(collection: String) {
       do {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
         if let idToken = json["idToken"] as? String {
-          getData(collection: collection, authToken: idToken)
+          getData(collection: collection, authToken: idToken) {
+            (records) in
+            print("+++ records \(records)")
+          }
         }
       } catch {
         print("--------------- AUTH ERROR ---------------")
