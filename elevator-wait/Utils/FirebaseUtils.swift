@@ -8,7 +8,7 @@
 import Foundation
 
 struct ElevatorData {
-  var when: String
+  var when: Date
   var wait: Double
 }
 
@@ -93,6 +93,9 @@ func postWithAuth(collection: String, fields: [String: Any]) {
 }
 
 func getData(collection: String, authToken: String, completionHandler: @escaping ([ElevatorData]) -> Void) {
+  let dateFormatter = DateFormatter()
+  dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+
   let BASE = "https://firestore.googleapis.com/v1"
   let PROJECT_ID = "elevator-wait"
   let collectionAddress = BASE + "/projects/\(PROJECT_ID)/databases/(default)/documents/\(collection)"
@@ -117,11 +120,11 @@ func getData(collection: String, authToken: String, completionHandler: @escaping
       do {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
         print("--------------- Get ---------------")
-
         if let fields = json["documents"] as? [[String: Any]] {
           for field in fields {
             let xxx = field["fields"] as! [String: NSDictionary]
-            let when = (xxx["when"]!["stringValue"] ?? "none") as! String
+            let whenString = ((xxx["when"]!["stringValue"] ?? "none") as! String).prefix(16)
+            let when = dateFormatter.date(from: String(whenString))!
             let wait = (xxx["wait"]!["doubleValue"] ?? 0) as! Double
             returnedData.append(ElevatorData(when: when, wait: wait))
             print(" \(when), \(wait)")

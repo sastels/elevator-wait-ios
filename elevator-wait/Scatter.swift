@@ -17,13 +17,13 @@ struct Scatter: UIViewRepresentable {
     let chart = ScatterChartView()
     let leftAxis = chart.leftAxis
     leftAxis.axisMinimum = 0
-    leftAxis.axisMaximum = 6
-    leftAxis.setLabelCount(7, force: true)
+//    leftAxis.axisMaximum = 6
+//    leftAxis.setLabelCount(7, force: true)
 
     chart.rightAxis.enabled = false
 
     let xAxis = chart.xAxis
-    xAxis.axisMaximum = 6
+//    xAxis.axisMaximum = 6
     xAxis.axisMinimum = 0
     xAxis.setLabelCount(7, force: true)
 
