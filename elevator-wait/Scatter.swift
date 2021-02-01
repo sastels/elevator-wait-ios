@@ -22,13 +22,15 @@ struct Scatter: UIViewRepresentable {
 
     chart.rightAxis.enabled = false
 
-    let xAxis = chart.xAxis
-//    xAxis.axisMaximum = 6
-    xAxis.axisMinimum = 0
-    xAxis.setLabelCount(7, force: true)
+//    let xAxis = chart.xAxis
+//    xAxis.axisMaximum = 24
+//    xAxis.axisMinimum = 0
+//    xAxis.setLabelCount(7, force: true)
 
     // it is convenient to form chart data in a separate func
     chart.data = addData()
+    chart.data?.calcMinMax()
+    chart.notifyDataSetChanged()
     return chart
   }
 

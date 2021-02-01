@@ -74,9 +74,9 @@ func postWithAuth(collection: String, fields: [String: Any]) {
   request.timeoutInterval = 20
   let session = URLSession.shared
   session.dataTask(with: request) { data, response, error in
-    if let response = response {
-      print(response)
-    }
+//    if let response = response {
+//      print(response)
+//    }
     if let data = data {
       do {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
@@ -93,8 +93,6 @@ func postWithAuth(collection: String, fields: [String: Any]) {
 }
 
 func getData(collection: String, authToken: String, completionHandler: @escaping ([ElevatorData]) -> Void) {
-  let dateFormatter = DateFormatter()
-  dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
 
   let BASE = "https://firestore.googleapis.com/v1"
   let PROJECT_ID = "elevator-wait"
@@ -113,24 +111,23 @@ func getData(collection: String, authToken: String, completionHandler: @escaping
 
     var returnedData: [ElevatorData] = []
 
-    if let response = response {
-      print(response)
-    }
+//    if let response = response {
+//      print(response)
+//    }
     if let data = data {
       do {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-        print("--------------- Get ---------------")
         if let fields = json["documents"] as? [[String: Any]] {
           for field in fields {
             let xxx = field["fields"] as! [String: NSDictionary]
-            let whenString = ((xxx["when"]!["stringValue"] ?? "none") as! String).prefix(16)
+            let whenString = ((xxx["when"]!["stringValue"] ?? "none") as! String).prefix(23)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
             let when = dateFormatter.date(from: String(whenString))!
             let wait = (xxx["wait"]!["doubleValue"] ?? 0) as! Double
             returnedData.append(ElevatorData(when: when, wait: wait))
-            print(" \(when), \(wait)")
           }
         }
-        print("--------------- Get ---------------")
       } catch {
         print("--------------- Get ERROR ---------------")
         print(error)
@@ -163,9 +160,9 @@ func getWithAuth(collection: String, completionHandler: @escaping ([ElevatorData
   request.timeoutInterval = 20
   let session = URLSession.shared
   session.dataTask(with: request) { data, response, error in
-    if let response = response {
-      print(response)
-    }
+//    if let response = response {
+//      print(response)
+//    }
     if let data = data {
       do {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
@@ -173,7 +170,6 @@ func getWithAuth(collection: String, completionHandler: @escaping ([ElevatorData
           getData(collection: collection, authToken: idToken) {
             records in
             completionHandler(records)
-//            print("+++ records \(records)")
           }
         }
       } catch {

@@ -22,25 +22,30 @@ struct DataView: View {
         getWithAuth(collection: self.timerName) {
           records in
           self.data = records
-          self.entries = processData(data: records)
+          self.entries = groupByHour(data: records)
         }
       }
     )
   }
 }
 
-func processData(data: [ElevatorData]) -> [ChartDataEntry] {
-  return data.map {
+func groupByHour(data: [ElevatorData]) -> [ChartDataEntry] {
+  let processedData:[ChartDataEntry] = data.map {
     let when = $0.when
-    print("when: \"\(when)\"")
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
+    let whenString = dateFormatter.string(from: when)
+    
     let calendar = Calendar.current
     let hour = calendar.component(.hour, from: when)
-    let minutes = calendar.component(.minute, from: when)
-    let seconds = calendar.component(.second, from: when)
-    let x:Double = Double(hour) + Double(minutes) / 60.0
-    print("time = \(hour):\(minutes):\(seconds)  x:\(x)")
-    return ChartDataEntry(x: 1, y: $0.wait)
+    let minute = calendar.component(.minute, from: when)
+    let x:Double = Double(hour) + Double(minute) / 60.0
+    let y = $0.wait
+    print ("\(whenString) : \(x), \(y)")
+    return ChartDataEntry(x: x, y: y)
   }
+  
+  return processedData
 }
 
 struct DataView_Previews: PreviewProvider {
