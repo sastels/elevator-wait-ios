@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,9 @@
 		0190065B25B732CA00010A92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0190065A25B732CA00010A92 /* Preview Assets.xcassets */; };
 		0190067C25B74DCF00010A92 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190067B25B74DCF00010A92 /* StopWatchManager.swift */; };
 		019ADBD225BFAED2009D2E1B /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017103B225BF1BFD00CB4D09 /* FirebaseUtils.swift */; };
+		019ADC1B25C0C543009D2E1B /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019ADC1A25C0C543009D2E1B /* DataView.swift */; };
+		019ADC2225C0C5D1009D2E1B /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019ADC2125C0C5D1009D2E1B /* Bar.swift */; };
+		019ADC2925C0F406009D2E1B /* Scatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019ADC2825C0F406009D2E1B /* Scatter.swift */; };
 		01AE8A4B25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01AE8A4C25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01AE8A4D25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
@@ -122,6 +125,9 @@
 		0190065C25B732CA00010A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0190065D25B732CA00010A92 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		0190067B25B74DCF00010A92 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
+		019ADC1A25C0C543009D2E1B /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		019ADC2125C0C5D1009D2E1B /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		019ADC2825C0F406009D2E1B /* Scatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scatter.swift; sourceTree = "<group>"; };
 		01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01E8111E25BA35C200429861 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		0C193FAFDCA2AB6F67B8648F /* Pods-elevator-wait WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit Extension/Pods-elevator-wait WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +236,9 @@
 				01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */,
 				0190062325B732C800010A92 /* Info.plist */,
 				0190062025B732C800010A92 /* Preview Content */,
+				019ADC1A25C0C543009D2E1B /* DataView.swift */,
+				019ADC2125C0C5D1009D2E1B /* Bar.swift */,
+				019ADC2825C0F406009D2E1B /* Scatter.swift */,
 			);
 			path = "elevator-wait";
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 				0190061425B732C700010A92 /* Frameworks */,
 				0190061525B732C700010A92 /* Resources */,
 				0190066725B732CA00010A92 /* Embed Watch Content */,
+				9727D66A7868AB3DCA0F9DF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -372,6 +382,7 @@
 				0190062F25B732C800010A92 /* Sources */,
 				0190063025B732C800010A92 /* Frameworks */,
 				0190063125B732C800010A92 /* Resources */,
+				67B91ED449A21C4979E1BB3C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -564,6 +575,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		67B91ED449A21C4979E1BB3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-elevator-wait-elevator-waitUITests/Pods-elevator-wait-elevator-waitUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-elevator-wait-elevator-waitUITests/Pods-elevator-wait-elevator-waitUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-elevator-wait-elevator-waitUITests/Pods-elevator-wait-elevator-waitUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9727D66A7868AB3DCA0F9DF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-elevator-wait/Pods-elevator-wait-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-elevator-wait/Pods-elevator-wait-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-elevator-wait/Pods-elevator-wait-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B00EC7839E6817B424D58A27 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -638,7 +683,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				017103B325BF1BFD00CB4D09 /* FirebaseUtils.swift in Sources */,
+				019ADC2925C0F406009D2E1B /* Scatter.swift in Sources */,
+				019ADC2225C0C5D1009D2E1B /* Bar.swift in Sources */,
 				0190067C25B74DCF00010A92 /* StopWatchManager.swift in Sources */,
+				019ADC1B25C0C543009D2E1B /* DataView.swift in Sources */,
 				0190061D25B732C700010A92 /* TimerView.swift in Sources */,
 				0190061B25B732C700010A92 /* elevator_waitApp.swift in Sources */,
 			);
