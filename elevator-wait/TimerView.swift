@@ -29,49 +29,54 @@ struct TimerView: View {
   @State var timerName = "test"
 
   var body: some View {
-    VStack {
-      TextField("Enter collection...", text: $timerName).padding()
-        .multilineTextAlignment(.center)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
-      
-      Spacer()
+    NavigationView {
+      VStack {
+        NavigationLink(destination: DataView()) {
+          Text("Data")
+        }
+        TextField("Enter collection...", text: $timerName).padding()
+          .multilineTextAlignment(.center)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
 
-      let minutes = (stopWatchManager.secondsElapsed / 60.0).rounded(.down)
-      let seconds = (stopWatchManager.secondsElapsed - 60.0 * minutes)
-      Text("\(String(format: "%02.0f:%02.0f", minutes, seconds))").font(.title)
-      Spacer()
-      
-      VStack { // just to disable the buttons
-      switch stopWatchManager.mode {
-        case .stopped:
-          Button(action: { stopWatchManager.start() }) {
-            Text("Start").fontWeight(.bold)
-          }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
-        case .running:
-          Button(action: { stopWatchManager.pause() }) {
-            Text("Pause")
-              .fontWeight(.bold)
-          }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
-        case .paused:
-          VStack(spacing: 10) {
-            Button(action: { stopWatchManager.start() }) {
-              Text("Continue").fontWeight(.bold)
-            }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
-            Button(action: {
-              submit()
-              stopWatchManager.stop()
+        Spacer()
+
+        let minutes = (stopWatchManager.secondsElapsed / 60.0).rounded(.down)
+        let seconds = (stopWatchManager.secondsElapsed - 60.0 * minutes)
+        Text("\(String(format: "%02.0f:%02.0f", minutes, seconds))").font(.title)
+        Spacer()
+
+        VStack { // just to disable the buttons
+          switch stopWatchManager.mode {
+            case .stopped:
+              Button(action: { stopWatchManager.start() }) {
+                Text("Start").fontWeight(.bold)
+              }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
+            case .running:
+              Button(action: { stopWatchManager.pause() }) {
+                Text("Pause")
+                  .fontWeight(.bold)
+              }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
+            case .paused:
+              VStack(spacing: 10) {
+                Button(action: { stopWatchManager.start() }) {
+                  Text("Continue").fontWeight(.bold)
+                }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
+                Button(action: {
+                  submit()
+                  stopWatchManager.stop()
               }) {
-              Text("Submit").fontWeight(.bold)
-            }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
-            Spacer().frame(height: 10)
-            Button(action: { stopWatchManager.stop() }) {
-              Text("Reset").fontWeight(.bold)
-            }.buttonStyle(PhoneButtonStyle(bgColor: .red))
+                  Text("Submit").fontWeight(.bold)
+                }.buttonStyle(PhoneButtonStyle(bgColor: .purple))
+                Spacer().frame(height: 10)
+                Button(action: { stopWatchManager.stop() }) {
+                  Text("Reset").fontWeight(.bold)
+                }.buttonStyle(PhoneButtonStyle(bgColor: .red))
+              }
           }
-      }
-      }.disabled(timerName.isEmpty)
-      Spacer()
-    }.padding()
+        }.disabled(timerName.isEmpty)
+        Spacer()
+      }.padding()
+    }
   }
 
   func submit() {
