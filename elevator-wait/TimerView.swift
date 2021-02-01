@@ -25,19 +25,17 @@ struct PhoneButtonStyle: ButtonStyle {
 
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
-
-  @State var timerName = "test"
+  @ObservedObject var userSettings = UserSettings()
 
   var body: some View {
     NavigationView {
       VStack {
-        NavigationLink(destination: DataView()) {
+        NavigationLink(destination: DataView(timerName: userSettings.timerName)) {
           Text("Data")
         }
-        TextField("Enter collection...", text: $timerName).padding()
+        TextField("Enter collection...", text: $userSettings.timerName).padding()
           .multilineTextAlignment(.center)
           .textFieldStyle(RoundedBorderTextFieldStyle())
-
         Spacer()
 
         let minutes = (stopWatchManager.secondsElapsed / 60.0).rounded(.down)
@@ -73,7 +71,7 @@ struct TimerView: View {
                 }.buttonStyle(PhoneButtonStyle(bgColor: .red))
               }
           }
-        }.disabled(timerName.isEmpty)
+        }.disabled(userSettings.timerName.isEmpty)
         Spacer()
       }.padding()
     }
@@ -90,7 +88,7 @@ struct TimerView: View {
       "wait": ["doubleValue": wait],
       "when": ["stringValue": dateString],
     ]
-    postWithAuth(collection: self.timerName, fields: fields)
+    postWithAuth(collection: userSettings.timerName, fields: fields)
   }
 }
 

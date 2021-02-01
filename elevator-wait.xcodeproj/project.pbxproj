@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011682E725C8AC45008AA5E1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011682E625C8AC45008AA5E1 /* UserSettings.swift */; };
 		017103B325BF1BFD00CB4D09 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017103B225BF1BFD00CB4D09 /* FirebaseUtils.swift */; };
 		0190061B25B732C700010A92 /* elevator_waitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190061A25B732C700010A92 /* elevator_waitApp.swift */; };
 		0190061D25B732C700010A92 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190061C25B732C700010A92 /* TimerView.swift */; };
@@ -99,6 +100,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		011682E625C8AC45008AA5E1 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		017103B225BF1BFD00CB4D09 /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		0190061725B732C700010A92 /* elevator-wait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "elevator-wait.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0190061A25B732C700010A92 /* elevator_waitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elevator_waitApp.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				019ADC1A25C0C543009D2E1B /* DataView.swift */,
 				019ADC2125C0C5D1009D2E1B /* Bar.swift */,
 				019ADC2825C0F406009D2E1B /* Scatter.swift */,
+				011682E625C8AC45008AA5E1 /* UserSettings.swift */,
 			);
 			path = "elevator-wait";
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				019ADC2225C0C5D1009D2E1B /* Bar.swift in Sources */,
 				0190067C25B74DCF00010A92 /* StopWatchManager.swift in Sources */,
 				019ADC1B25C0C543009D2E1B /* DataView.swift in Sources */,
+				011682E725C8AC45008AA5E1 /* UserSettings.swift in Sources */,
 				0190061D25B732C700010A92 /* TimerView.swift in Sources */,
 				0190061B25B732C700010A92 /* elevator_waitApp.swift in Sources */,
 			);
