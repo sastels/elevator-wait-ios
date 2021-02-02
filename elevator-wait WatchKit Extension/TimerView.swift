@@ -25,12 +25,12 @@ struct WatchButtonStyle: ButtonStyle {
 
 struct TimerView: View {
   @ObservedObject var stopWatchManager = StopWatchManager()
-  @State var timerName = "test"
+  @ObservedObject var userSettings = UserSettings()
 
   var body: some View {
     VStack {
       if stopWatchManager.mode != .paused {
-        TextField("Enter collection...", text: $timerName).padding()
+        TextField("Enter collection...", text: $userSettings.timerName).padding()
           .multilineTextAlignment(.center)
         Spacer()
       }
@@ -65,7 +65,7 @@ struct TimerView: View {
             }.buttonStyle(WatchButtonStyle(bgColor: .red))
           }
       }
-      }.disabled(timerName.isEmpty)
+      }.disabled(userSettings.timerName.isEmpty)
     }
   }
 
@@ -80,7 +80,7 @@ struct TimerView: View {
       "wait": ["doubleValue": wait],
       "when": ["stringValue": dateString],
     ]
-    postWithAuth(collection: self.timerName, fields: fields)
+    postWithAuth(collection: userSettings.timerName, fields: fields)
   }
 }
 

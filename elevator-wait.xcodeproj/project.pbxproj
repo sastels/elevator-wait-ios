@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011682E725C8AC45008AA5E1 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011682E625C8AC45008AA5E1 /* UserSettings.swift */; };
 		017103B325BF1BFD00CB4D09 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017103B225BF1BFD00CB4D09 /* FirebaseUtils.swift */; };
 		0190061B25B732C700010A92 /* elevator_waitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190061A25B732C700010A92 /* elevator_waitApp.swift */; };
 		0190061D25B732C700010A92 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190061C25B732C700010A92 /* TimerView.swift */; };
@@ -35,6 +36,7 @@
 		01AE8A4F25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01E810F225BA30E200429861 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190067B25B74DCF00010A92 /* StopWatchManager.swift */; };
 		01E8111F25BA35C200429861 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8111E25BA35C200429861 /* TimerView.swift */; };
+		01E8332325C9BAB5008FA044 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011682E625C8AC45008AA5E1 /* UserSettings.swift */; };
 		4C9B063658459A226EAD0BDB /* Pods_elevator_wait_elevator_waitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398C3A8148D6BCB108B7D6A3 /* Pods_elevator_wait_elevator_waitUITests.framework */; };
 		52F3924CC8222A84F59C6850 /* Pods_elevator_wait_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA895BF409150F8F329A266F /* Pods_elevator_wait_WatchKit_App.framework */; };
 		AA19098DA85C975E1E7DD6B5 /* Pods_elevator_wait_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C86D3BC77F1140AF97B230 /* Pods_elevator_wait_WatchKit_Extension.framework */; };
@@ -99,6 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		011682E625C8AC45008AA5E1 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		017103B225BF1BFD00CB4D09 /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		0190061725B732C700010A92 /* elevator-wait.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "elevator-wait.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0190061A25B732C700010A92 /* elevator_waitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elevator_waitApp.swift; sourceTree = "<group>"; };
@@ -239,6 +242,7 @@
 				019ADC1A25C0C543009D2E1B /* DataView.swift */,
 				019ADC2125C0C5D1009D2E1B /* Bar.swift */,
 				019ADC2825C0F406009D2E1B /* Scatter.swift */,
+				011682E625C8AC45008AA5E1 /* UserSettings.swift */,
 			);
 			path = "elevator-wait";
 			sourceTree = "<group>";
@@ -687,6 +691,7 @@
 				019ADC2225C0C5D1009D2E1B /* Bar.swift in Sources */,
 				0190067C25B74DCF00010A92 /* StopWatchManager.swift in Sources */,
 				019ADC1B25C0C543009D2E1B /* DataView.swift in Sources */,
+				011682E725C8AC45008AA5E1 /* UserSettings.swift in Sources */,
 				0190061D25B732C700010A92 /* TimerView.swift in Sources */,
 				0190061B25B732C700010A92 /* elevator_waitApp.swift in Sources */,
 			);
@@ -717,6 +722,7 @@
 				01E810F225BA30E200429861 /* StopWatchManager.swift in Sources */,
 				0190065625B732C900010A92 /* ComplicationController.swift in Sources */,
 				0190064E25B732C900010A92 /* elevator_waitApp.swift in Sources */,
+				01E8332325C9BAB5008FA044 /* UserSettings.swift in Sources */,
 				019ADBD225BFAED2009D2E1B /* FirebaseUtils.swift in Sources */,
 				0190065425B732C900010A92 /* NotificationView.swift in Sources */,
 			);
