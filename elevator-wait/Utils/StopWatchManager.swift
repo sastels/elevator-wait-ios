@@ -7,8 +7,8 @@
 // from https://blckbirds.com/post/creating-a-simple-stopwatch-in-swiftui/
 
 import Foundation
-
 import SwiftUI
+
 enum StopWatchMode {
   case running
   case stopped
@@ -18,25 +18,31 @@ enum StopWatchMode {
 class StopWatchManager: ObservableObject {
   @Published var secondsElapsed = 0.0
   @Published var mode: StopWatchMode = .stopped
-
-  var timer = Timer()
+  private var previousSecondsElapsed = 0.0
+  private var startTime: Date?
+  private var timer = Timer()
 
   func start() {
-    print("Timer started!")
     mode = .running
+    startTime = Date()
     timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-      self.secondsElapsed += 0.1
+      let timeDiff = Date().timeIntervalSinceReferenceDate - self.startTime!.timeIntervalSinceReferenceDate
+      self.secondsElapsed = self.previousSecondsElapsed + timeDiff
     }
   }
 
   func pause() {
-    timer.invalidate()
     mode = .paused
+    previousSecondsElapsed = secondsElapsed
+    timer.invalidate()
+    startTime = nil
   }
 
   func stop() {
-    timer.invalidate()
-    secondsElapsed = 0
     mode = .stopped
+    timer.invalidate()
+    startTime = nil
+    secondsElapsed = 0.0
+    previousSecondsElapsed = 0.0
   }
 }
