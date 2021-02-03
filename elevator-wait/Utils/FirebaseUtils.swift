@@ -73,7 +73,7 @@ func postWithAuth(collection: String, fields: [String: Any]) {
   request.httpBody = httpBody
   request.timeoutInterval = 20
   let session = URLSession.shared
-  session.dataTask(with: request) { data, response, error in
+  session.dataTask(with: request) { data, _, error in
 //    if let response = response {
 //      print(response)
 //    }
@@ -92,11 +92,13 @@ func postWithAuth(collection: String, fields: [String: Any]) {
   }.resume()
 }
 
-func getData(collection: String, authToken: String, completionHandler: @escaping ([ElevatorData]) -> Void) {
-
+func getData(collection: String, authToken: String, pageToken: String?, completionHandler: @escaping ([ElevatorData]) -> Void) {
   let BASE = "https://firestore.googleapis.com/v1"
   let PROJECT_ID = "elevator-wait"
-  let collectionAddress = BASE + "/projects/\(PROJECT_ID)/databases/(default)/documents/\(collection)"
+  var collectionAddress = BASE + "/projects/\(PROJECT_ID)/databases/(default)/documents/\(collection)"
+  if let pageToken = pageToken {
+    collectionAddress += "?pageToken=\(pageToken)"
+  }
 
   guard let serviceUrl = URL(string: collectionAddress) else { return }
 
@@ -107,7 +109,7 @@ func getData(collection: String, authToken: String, completionHandler: @escaping
 
   request.timeoutInterval = 20
   let session = URLSession.shared
-  session.dataTask(with: request) { data, response, error in
+  session.dataTask(with: request) { data, _, error in
 
     var returnedData: [ElevatorData] = []
 
@@ -128,14 +130,22 @@ func getData(collection: String, authToken: String, completionHandler: @escaping
             returnedData.append(ElevatorData(when: when, wait: wait))
           }
         }
+
+        if let nextPageToken = json["nextPageToken"] as? String {
+          getData(collection: collection, authToken: authToken, pageToken: nextPageToken) {
+            records in
+            returnedData.append(contentsOf: records)
+            completionHandler(returnedData)
+          }
+        } else {
+          completionHandler(returnedData)
+        }
       } catch {
         print("--------------- Get ERROR ---------------")
         print(error)
         print("--------------- Get ERROR ---------------")
       }
     }
-
-    completionHandler(returnedData)
   }.resume()
 }
 
@@ -159,7 +169,7 @@ func getWithAuth(collection: String, completionHandler: @escaping ([ElevatorData
   request.httpBody = httpBody
   request.timeoutInterval = 20
   let session = URLSession.shared
-  session.dataTask(with: request) { data, response, error in
+  session.dataTask(with: request) { data, _, error in
 //    if let response = response {
 //      print(response)
 //    }
@@ -167,7 +177,7 @@ func getWithAuth(collection: String, completionHandler: @escaping ([ElevatorData
       do {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
         if let idToken = json["idToken"] as? String {
-          getData(collection: collection, authToken: idToken) {
+          getData(collection: collection, authToken: idToken, pageToken: nil) {
             records in
             completionHandler(records)
           }
