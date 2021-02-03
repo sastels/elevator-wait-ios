@@ -116,16 +116,20 @@ func getData(collection: String, authToken: String, pageToken: String?, completi
 //    if let response = response {
 //      print(response)
 //    }
+    
+    let dateParseFormatter = DateFormatter()
+    dateParseFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    
     if let data = data {
       do {
         let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
         if let fields = json["documents"] as? [[String: Any]] {
           for field in fields {
             let xxx = field["fields"] as! [String: NSDictionary]
-            let whenString = ((xxx["when"]!["stringValue"] ?? "none") as! String).prefix(23)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
-            let when = dateFormatter.date(from: String(whenString))!
+
+            let initialString = ((xxx["when"]!["stringValue"] ?? "none") as! String)
+            let whenString = initialString.prefix(19)
+            let when = dateParseFormatter.date(from: String(whenString))!
             let wait = (xxx["wait"]!["doubleValue"] ?? 0) as! Double
             returnedData.append(ElevatorData(when: when, wait: wait))
           }
