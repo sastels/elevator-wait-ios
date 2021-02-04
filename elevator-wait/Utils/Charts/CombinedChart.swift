@@ -10,26 +10,17 @@ import SwiftUI
 
 struct CombinedChart: UIViewRepresentable {
   var entries: [ChartDataEntry]
-
+  var chart = CombinedChartView()
+  
   // this func is required to conform to UIViewRepresentable protocol
   func makeUIView(context: Context) -> CombinedChartView {
-    // crate new chart
-    let chart = CombinedChartView()
     let leftAxis = chart.leftAxis
     leftAxis.axisMinimum = 0
-//    leftAxis.axisMaximum = 6
-//    leftAxis.setLabelCount(7, force: true)
-
     chart.rightAxis.enabled = false
 
-//    let xAxis = chart.xAxis
-//    xAxis.axisMaximum = 24
-//    xAxis.axisMinimum = 0
-//    xAxis.setLabelCount(7, force: true)
-
-    // it is convenient to form chart data in a separate func
     let data = CombinedChartData()
-    data.scatterData = addScatterData()
+    data.scatterData = scatterData()
+    data.lineData = lineData()
     chart.data = data
     chart.data?.calcMinMax()
     chart.notifyDataSetChanged()
@@ -38,13 +29,13 @@ struct CombinedChart: UIViewRepresentable {
 
   // this func is required to conform to UIViewRepresentable protocol
   func updateUIView(_ uiView: CombinedChartView, context: Context) {
-    // when data changes chartd.data update is required
     let data = CombinedChartData()
-    data.scatterData = addScatterData()
+    data.scatterData = scatterData()
+    data.lineData = lineData()
     uiView.data = data
   }
 
-  func addScatterData() -> ScatterChartData {
+  func scatterData() -> ScatterChartData {
     let data = ScatterChartData()
     let dataSet = ScatterChartDataSet(entries: entries, label: "DS 1")
     dataSet.setScatterShape(.circle)
@@ -54,17 +45,29 @@ struct CombinedChart: UIViewRepresentable {
     return data
   }
 
-  typealias UIViewType = ScatterChartView
+  func lineData() -> LineChartData {
+    
+    let set = LineChartDataSet(entries: entries, label: "Line DataSet")
+    set.setColor(UIColor.black)
+    set.lineWidth = 2.5
+    set.circleRadius = 0
+    set.circleHoleRadius = 0
+    set.mode = .cubicBezier
+    set.drawValuesEnabled = false
+    set.axisDependency = .left
+
+    return LineChartData(dataSet: set)
+  }
+
+  typealias UIViewType = CombinedChartView
 }
 
 struct CombinedChart_Previews: PreviewProvider {
   static var previews: some View {
-    Scatter(entries: [
-      ChartDataEntry(x: 1, y: 1),
-      ChartDataEntry(x: 2, y: 2),
-      ChartDataEntry(x: 3, y: 3),
-      ChartDataEntry(x: 4, y: 4),
-      ChartDataEntry(x: 5, y: 5)
-    ])
+    let entries = (0..<40).map { (i) -> ChartDataEntry in
+      ChartDataEntry(x: Double(i) + 0.5, y: Double(i) * 1.0 + Double(arc4random_uniform(15) + 5))
+    }
+
+    CombinedChart(entries:entries)
   }
 }
