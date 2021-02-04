@@ -15,8 +15,13 @@ struct CombinedChart: UIViewRepresentable {
   func makeUIView(context: Context) -> CombinedChartView {
     let leftAxis = chart.leftAxis
     leftAxis.axisMinimum = 0
+    leftAxis.granularity = 1.0
+    leftAxis.granularityEnabled = true
     chart.rightAxis.enabled = false
-
+    chart.xAxis.labelPosition = .bottom
+    
+//    chart.xAxis.valueFormatter = ??
+    
     let data = CombinedChartData()
     data.scatterData = scatterData()
     data.lineData = lineData()
