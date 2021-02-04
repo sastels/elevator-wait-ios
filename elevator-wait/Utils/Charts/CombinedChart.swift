@@ -8,33 +8,8 @@
 import Charts
 import SwiftUI
 
-/* web app
- const INTERVAL_LENGTH = 30.0 / 60; // in hours
- const INTERVAL_SPACING = 30.0 / 60; // in hours
-
- const smoothedData = data => {
- let smoothedTimes = Array(24 / INTERVAL_SPACING)
-   .fill()
-   .map((x, i) => i * INTERVAL_SPACING);
-
- let smoothedData = smoothedTimes.map(t => {
-   return [
-     t,
-     data.filter(pt => Math.abs(t - pt[0]) < INTERVAL_LENGTH / 2.0)
-   ];
- });
- smoothedData = smoothedData.filter(pt => pt[1].length > 1);
- smoothedData = smoothedData.map(pt => [
-   pt[0],
-   pt[1].reduce((total, pt) => total + pt[1], 0) / pt[1].length
- ]);
- return smoothedData;
- };
-
- */
-
 struct CombinedChart: UIViewRepresentable {
-  var entries: [ChartDataEntry]
+  let entries: [ChartDataEntry]
   var chart = CombinedChartView()
 
   func makeUIView(context: Context) -> CombinedChartView {
@@ -51,7 +26,6 @@ struct CombinedChart: UIViewRepresentable {
     return chart
   }
 
-  // this func is required to conform to UIViewRepresentable protocol
   func updateUIView(_ uiView: CombinedChartView, context: Context) {
     let data = CombinedChartData()
     data.scatterData = scatterData()
@@ -60,16 +34,16 @@ struct CombinedChart: UIViewRepresentable {
   }
 
   func scatterData() -> ScatterChartData {
+    let entriesNormalized = entries.map { ChartDataEntry(x: $0.x, y: $0.y / 60.0) }
     let data = ScatterChartData()
-    let dataSet = ScatterChartDataSet(entries: entries, label: "DS 1")
+    let dataSet = ScatterChartDataSet(entries: entriesNormalized, label: "Times")
     dataSet.setScatterShape(.circle)
     dataSet.colors = [NSUIColor.blue]
-    dataSet.label = "Times"
     data.addDataSet(dataSet)
     return data
   }
 
-  func medianY(x: Double) -> Double {
+  func medianY(entries: [ChartDataEntry], x: Double) -> Double {
     let yValues = entries
       .filter { data in abs(data.x - x) < 0.5 }
       .map { $0.y }
@@ -79,6 +53,7 @@ struct CombinedChart: UIViewRepresentable {
   }
 
   func lineData() -> LineChartData {
+    let entriesNormalized = entries.map { ChartDataEntry(x: $0.x, y: $0.y / 60.0) }
     var xMin = self.entries.isEmpty ? 0 : self.entries[0].x
     var xMax = xMin
     for data in self.entries {
@@ -89,7 +64,7 @@ struct CombinedChart: UIViewRepresentable {
       }
     }
     let entries = stride(from: Double(xMin), to: Double(xMax), by: 0.5).map { (i) -> ChartDataEntry in
-      ChartDataEntry(x: i, y: medianY(x: i))
+      ChartDataEntry(x: i, y: medianY(entries:entriesNormalized, x: i))
     }.filter { data in data.y > 0 }
 
     let set = LineChartDataSet(entries: entries, label: "Median")
@@ -111,9 +86,8 @@ struct CombinedChart_Previews: PreviewProvider {
   static var previews: some View {
     let entries = stride(from: 0.0, to: 24.0, by: 0.4)
       .map { (i) -> ChartDataEntry in
-        ChartDataEntry(x: i + 0.5, y: i * 1.0 + Double(arc4random_uniform(15) + 5))
+        ChartDataEntry(x: i, y: abs(i - 12) * 15.0 + Double(arc4random_uniform(60) + 120))
       }
-
     CombinedChart(entries: entries)
   }
 }
