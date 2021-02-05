@@ -17,7 +17,7 @@ struct DataView: View {
     return (
       VStack {
         Text("\(timerName): \(data.count)")
-        Scatter(entries: entries)
+        CombinedChart(entries: entries)
       }.onAppear {
         getWithAuth(collection: self.timerName) {
           records in

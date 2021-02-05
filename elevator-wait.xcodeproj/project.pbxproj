@@ -34,6 +34,7 @@
 		01AE8A4D25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01AE8A4E25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
 		01AE8A4F25B89B9600C9DC08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */; };
+		01B492EA25CC536A00FC56CC /* CombinedChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B492E925CC536A00FC56CC /* CombinedChart.swift */; };
 		01E810F225BA30E200429861 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190067B25B74DCF00010A92 /* StopWatchManager.swift */; };
 		01E8111F25BA35C200429861 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8111E25BA35C200429861 /* TimerView.swift */; };
 		01E8332325C9BAB5008FA044 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011682E625C8AC45008AA5E1 /* UserSettings.swift */; };
@@ -132,6 +133,7 @@
 		019ADC2125C0C5D1009D2E1B /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
 		019ADC2825C0F406009D2E1B /* Scatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scatter.swift; sourceTree = "<group>"; };
 		01AE8A4A25B89B9600C9DC08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01B492E925CC536A00FC56CC /* CombinedChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedChart.swift; sourceTree = "<group>"; };
 		01E8111E25BA35C200429861 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		0C193FAFDCA2AB6F67B8648F /* Pods-elevator-wait WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit Extension/Pods-elevator-wait WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		0F91A08FF472F2A022FD21F5 /* Pods-elevator-wait WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-elevator-wait WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-elevator-wait WatchKit App/Pods-elevator-wait WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,8 +199,10 @@
 		017103B125BF1BCF00CB4D09 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				01B492E825CC530900FC56CC /* Charts */,
 				0190067B25B74DCF00010A92 /* StopWatchManager.swift */,
 				017103B225BF1BFD00CB4D09 /* FirebaseUtils.swift */,
+				011682E625C8AC45008AA5E1 /* UserSettings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -240,9 +244,6 @@
 				0190062325B732C800010A92 /* Info.plist */,
 				0190062025B732C800010A92 /* Preview Content */,
 				019ADC1A25C0C543009D2E1B /* DataView.swift */,
-				019ADC2125C0C5D1009D2E1B /* Bar.swift */,
-				019ADC2825C0F406009D2E1B /* Scatter.swift */,
-				011682E625C8AC45008AA5E1 /* UserSettings.swift */,
 			);
 			path = "elevator-wait";
 			sourceTree = "<group>";
@@ -304,6 +305,16 @@
 				0190065A25B732CA00010A92 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		01B492E825CC530900FC56CC /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				019ADC2125C0C5D1009D2E1B /* Bar.swift */,
+				019ADC2825C0F406009D2E1B /* Scatter.swift */,
+				01B492E925CC536A00FC56CC /* CombinedChart.swift */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 		77EA3D2CC641201E2A2E3DAC /* Frameworks */ = {
@@ -686,6 +697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B492EA25CC536A00FC56CC /* CombinedChart.swift in Sources */,
 				017103B325BF1BFD00CB4D09 /* FirebaseUtils.swift in Sources */,
 				019ADC2925C0F406009D2E1B /* Scatter.swift in Sources */,
 				019ADC2225C0C5D1009D2E1B /* Bar.swift in Sources */,
