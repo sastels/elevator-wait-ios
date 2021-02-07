@@ -36,6 +36,7 @@ struct TimerView: View {
         TextField("Enter collection...", text: $userSettings.timerName).padding()
           .multilineTextAlignment(.center)
           .textFieldStyle(RoundedBorderTextFieldStyle())
+          .autocapitalization(.none)
         Spacer()
 
         let minutes = (stopWatchManager.secondsElapsed / 60.0).rounded(.down)

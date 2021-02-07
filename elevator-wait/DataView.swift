@@ -16,7 +16,8 @@ struct DataView: View {
     let entries = groupByHour(data: data)
     return (
       VStack {
-        Text("\(timerName): \(data.count)")
+        Text("\(timerName): \(data.count) points")
+          .font(.title2).fontWeight(.bold)
         CombinedChart(entries: entries)
         DataTableView(data: data)
       }.onAppear {
