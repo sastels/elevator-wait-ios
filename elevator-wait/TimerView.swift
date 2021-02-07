@@ -30,12 +30,13 @@ struct TimerView: View {
   var body: some View {
     NavigationView {
       VStack {
-        NavigationLink(destination: DataView(timerName: userSettings.timerName)) {
+        NavigationLink(destination: DataView(timerName: userSettings.timerName, data: [])) {
           Text("Data")
         }
         TextField("Enter collection...", text: $userSettings.timerName).padding()
           .multilineTextAlignment(.center)
           .textFieldStyle(RoundedBorderTextFieldStyle())
+          .autocapitalization(.none)
         Spacer()
 
         let minutes = (stopWatchManager.secondsElapsed / 60.0).rounded(.down)
